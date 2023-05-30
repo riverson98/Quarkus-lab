@@ -1,6 +1,8 @@
 package domain;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 //abstração do banco de dados.
 public interface CandidateRepository{
@@ -9,6 +11,14 @@ public interface CandidateRepository{
         save(List.of(candidate));
     }
 
-    List<Candidate> findAllCandidates();
+    List<Candidate> find(CandidateQuery query);
 
+    default List<Candidate> findAll(){
+        return find(new CandidateQuery.Builder().build());
+    };
+
+    default Optional<Candidate> findById(String id){
+        CandidateQuery query = new CandidateQuery.Builder().ids(Set.of(id)).build();
+        return find(query).stream().findFirst();
+    };
 }

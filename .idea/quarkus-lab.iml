@@ -10,5 +10,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="io.quarkus.http.core" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-core:3.0.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:31.1-jre" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.inferred:freebuilder:2.8.0" level="project" />
+    <orderEntry type="module" module-name="election-management" />
   </component>
 </module>

@@ -2,6 +2,8 @@ package domain;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
+import java.util.List;
+
 @ApplicationScoped
 public class CandidateService {
 
@@ -15,7 +17,11 @@ public class CandidateService {
         repository.save(candidate);
     }
 
-    public void findAll() {
-        repository.findAllCandidates();
+    public List<Candidate> findAllCandidates() {
+        return repository.findAll();
+    }
+
+    public Candidate findCandidateById(String id) {
+        return repository.findById(id).orElseThrow();
     }
 }
